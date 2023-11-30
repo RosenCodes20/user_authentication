@@ -12,13 +12,16 @@ def registration():
 
 
 def login():
-    print("Welcome back!")
-    username = input("Enter your username:")
-    password = input("Enter your password:")
-    if username in user_credentials and user_credentials[username] == {"Password": password}:
-        print("You've successfully logged in!")
+    if user_credentials:
+        print("Welcome back!")
+        username = input("Enter your username:")
+        password = input("Enter your password:")
+        if username in user_credentials and user_credentials[username] == {"Password": password}:
+            print("You've successfully logged in!")
+        else:
+            print("Login failed.Invalid username or password.")
     else:
-        print("Login failed.Invalid username or password.")
+        print("You are not registered please go and make registration!")
 
 
 def check_profile():
